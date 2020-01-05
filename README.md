@@ -39,6 +39,8 @@ func getTextColor(from label: UILabel) -> Color<RGB> {
 }
 ```
 
+See [RGBPalette](./Sources/Palette/RGBPalette.swift) for complete list of colors.
+
 ## Installation
 
 Add the package to Your SwiftPM package dependencies:
