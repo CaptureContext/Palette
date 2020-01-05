@@ -7,4 +7,3 @@
 //
 
 @_exported import GenericColor
-public typealias Color<Space: ColorSpace> = GenericColor.Color<Space>
