@@ -49,7 +49,7 @@ Add the package to Your SwiftPM package dependencies:
 .package(url: "https://github.com/MakeupStudio/Palette.git", from: "2.0.0")
 ```
 
-then add `Makeup` dependency to your target.
+then add `Palette` dependency to your target.
 
 ## Licence
 
