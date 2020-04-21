@@ -46,7 +46,10 @@ See [RGBPalette](./Sources/Palette/RGBPalette.swift) for complete list of colors
 Add the package to Your SwiftPM package dependencies:
 
 ```swift
-.package(url: "https://github.com/MakeupStudio/Palette.git", from: "2.0.0")
+.package(
+    url: "https://github.com/MakeupStudio/Palette.git", 
+    .upToNextMajor(from: "3.0.0")
+)
 ```
 
 then add `Palette` dependency to your target.
