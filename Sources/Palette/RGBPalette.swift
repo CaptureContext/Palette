@@ -6,21 +6,19 @@
 //  Copyright © 2019 MakeupStudio. All rights reserved.
 //
 
-import GenericColor
-
 // MARK: - ColorTemplates
 extension Color where Space == RGB {
     
     // MARK: - Colors.Base
     
     public static var black   : Color { .init() }
-    public static var red     : Color { .init(red: 1) }
-    public static var blue    : Color { .init(blue: 1) }
-    public static var green   : Color { .init(green: 1) }
-    public static var clear   : Color { .init(alpha: 0) }
-    public static var fuchsia : Color { .init(red: 1, blue: 1) }
-    public static var yellow  : Color { .init(red: 1, green: 1) }
-    public static var white   : Color { .init(red: 1, green: 1, blue: 1) }
+    public static var red     : Color { .init(red: .max) }
+    public static var blue    : Color { .init(blue: .max) }
+    public static var green   : Color { .init(green: .max) }
+    public static var clear   : Color { .init(alpha: .min) }
+    public static var fuchsia : Color { .init(red: .max, blue: .max) }
+    public static var yellow  : Color { .init(red: .max, green: .max) }
+    public static var white   : Color { .init(red: .max, green: .max, blue: .max) }
     
     // MARK: - Colors.Custom
     

@@ -11,8 +11,10 @@ let package = Package(
             targets: ["Palette"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/MakeupStudio/GenericColor.git",
-                 from: "2.0.0"),
+        .package(
+            url: "https://github.com/MakeupStudio/GenericColor.git",
+            from: "3.0.0"
+        ),
     ],
     targets: [
         .target(
