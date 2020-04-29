@@ -43,6 +43,8 @@ See [RGBPalette](./Sources/Palette/RGBPalette.swift) for complete list of colors
 
 ## Installation
 
+**_See [this](https://github.com/MakeupStudio/Palette/tree/develop/4.0.0) for the latest version_**.
+
 Add the package to Your SwiftPM package dependencies:
 
 ```swift
