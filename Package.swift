@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/MakeupStudio/GenericColor.git",
-            .upToNextMajor(from: "3.0.1")
+            .upToNextMajor(from: "3.1.0")
         ),
     ],
     targets: [

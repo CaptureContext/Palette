@@ -1,0 +1,156 @@
+//
+//  WebColorPalette.swift
+//  Palette
+//
+//  Created by Maxim Krouk on 4/29/20.
+//
+
+public enum WebColorNamespace {}
+
+extension Color where Space == RGB {
+    public static func web(_ container: ColorContainer<WebColorNamespace, RGB>) -> Self { container.content }
+}
+
+extension ColorContainer where Namespace == WebColorNamespace, Space == RGB {
+    public static func aliceBlue()              -> Self { .init(Color(rgba: 0xF0F8FFFF)!) }
+    public static func antiqueWhite()           -> Self { .init(Color(rgba: 0xFAEBD7FF)!) }
+    public static func aqua()                   -> Self { .init(Color(rgba: 0x00FFFFFF)!) }
+    public static func aquamarine()             -> Self { .init(Color(rgba: 0x7FFFD4FF)!) }
+    public static func azure()                  -> Self { .init(Color(rgba: 0xF0FFFFFF)!) }
+    public static func beige()                  -> Self { .init(Color(rgba: 0xF5F5DCFF)!) }
+    public static func bisque()                 -> Self { .init(Color(rgba: 0xFFE4C4FF)!) }
+    public static func blanchedAlmond()         -> Self { .init(Color(rgba: 0xFFEBCDFF)!) }
+    public static func blueViolet()             -> Self { .init(Color(rgba: 0x8A2BE2FF)!) }
+    public static func brown()                  -> Self { .init(Color(rgba: 0xA52A2AFF)!) }
+    public static func burlyWood()              -> Self { .init(Color(rgba: 0xDEB887FF)!) }
+    public static func cadetBlue()              -> Self { .init(Color(rgba: 0x5F9EA0FF)!) }
+    public static func chartreuse()             -> Self { .init(Color(rgba: 0x7FFF00FF)!) }
+    public static func chocolate()              -> Self { .init(Color(rgba: 0xD2691EFF)!) }
+    public static func coral()                  -> Self { .init(Color(rgba: 0xFF7F50FF)!) }
+    public static func cornflowerBlue()         -> Self { .init(Color(rgba: 0x6495EDFF)!) }
+    public static func cornsilk()               -> Self { .init(Color(rgba: 0xFFF8DCFF)!) }
+    public static func crimson()                -> Self { .init(Color(rgba: 0xDC143CFF)!) }
+    public static func cyan()                   -> Self { .init(Color(rgba: 0x00FFFFFF)!) }
+    public static func darkBlue()               -> Self { .init(Color(rgba: 0x00008BFF)!) }
+    public static func darkCyan()               -> Self { .init(Color(rgba: 0x008B8BFF)!) }
+    public static func darkGoldenRod()          -> Self { .init(Color(rgba: 0xB8860BFF)!) }
+    public static func darkGray()               -> Self { .init(Color(rgba: 0xA9A9A9FF)!) }
+    public static func darkGreen()              -> Self { .init(Color(rgba: 0x006400FF)!) }
+    public static func darkGrey()               -> Self { .init(Color(rgba: 0xA9A9A9FF)!) }
+    public static func darkKhaki()              -> Self { .init(Color(rgba: 0xBDB76BFF)!) }
+    public static func darkMagenta()            -> Self { .init(Color(rgba: 0x8B008BFF)!) }
+    public static func darkOliveGreen()         -> Self { .init(Color(rgba: 0x556B2FFF)!) }
+    public static func darkOrange()             -> Self { .init(Color(rgba: 0xFF8C00FF)!) }
+    public static func darkOrchid()             -> Self { .init(Color(rgba: 0x9932CCFF)!) }
+    public static func darkRed()                -> Self { .init(Color(rgba: 0x8B0000FF)!) }
+    public static func darkSalmon()             -> Self { .init(Color(rgba: 0xE9967AFF)!) }
+    public static func darkSeaGreen()           -> Self { .init(Color(rgba: 0x8FBC8FFF)!) }
+    public static func darkSlateBlue()          -> Self { .init(Color(rgba: 0x483D8BFF)!) }
+    public static func darkSlateGray()          -> Self { .init(Color(rgba: 0x2F4F4FFF)!) }
+    public static func darkSlateGrey()          -> Self { .init(Color(rgba: 0x2F4F4FFF)!) }
+    public static func darkTurquoise()          -> Self { .init(Color(rgba: 0x00CED1FF)!) }
+    public static func darkViolet()             -> Self { .init(Color(rgba: 0x9400D3FF)!) }
+    public static func deepPink()               -> Self { .init(Color(rgba: 0xFF1493FF)!) }
+    public static func deepSkyBlue()            -> Self { .init(Color(rgba: 0x00BFFFFF)!) }
+    public static func dimGray()                -> Self { .init(Color(rgba: 0x696969FF)!) }
+    public static func dimGrey()                -> Self { .init(Color(rgba: 0x696969FF)!) }
+    public static func dodgerBlue()             -> Self { .init(Color(rgba: 0x1E90FFFF)!) }
+    public static func fireBrick()              -> Self { .init(Color(rgba: 0xB22222FF)!) }
+    public static func floralWhite()            -> Self { .init(Color(rgba: 0xFFFAF0FF)!) }
+    public static func forestGreen()            -> Self { .init(Color(rgba: 0x228B22FF)!) }
+    public static func gainsboro()              -> Self { .init(Color(rgba: 0xDCDCDCFF)!) }
+    public static func ghostWhite()             -> Self { .init(Color(rgba: 0xF8F8FFFF)!) }
+    public static func gold()                   -> Self { .init(Color(rgba: 0xFFD700FF)!) }
+    public static func goldenRod()              -> Self { .init(Color(rgba: 0xDAA520FF)!) }
+    public static func gray()                   -> Self { .init(Color(rgba: 0x808080FF)!) }
+    public static func greenYellow()            -> Self { .init(Color(rgba: 0xADFF2FFF)!) }
+    public static func grey()                   -> Self { .init(Color(rgba: 0x808080FF)!) }
+    public static func honeyDew()               -> Self { .init(Color(rgba: 0xF0FFF0FF)!) }
+    public static func hotPink()                -> Self { .init(Color(rgba: 0xFF69B4FF)!) }
+    public static func indianRed()              -> Self { .init(Color(rgba: 0xCD5C5CFF)!) }
+    public static func indigo()                 -> Self { .init(Color(rgba: 0x4B0082FF)!) }
+    public static func ivory()                  -> Self { .init(Color(rgba: 0xFFFFF0FF)!) }
+    public static func khaki()                  -> Self { .init(Color(rgba: 0xF0E68CFF)!) }
+    public static func lavender()               -> Self { .init(Color(rgba: 0xE6E6FAFF)!) }
+    public static func lavenderBlush()          -> Self { .init(Color(rgba: 0xFFF0F5FF)!) }
+    public static func lawnGreen()              -> Self { .init(Color(rgba: 0x7CFC00FF)!) }
+    public static func lemonChiffon()           -> Self { .init(Color(rgba: 0xFFFACDFF)!) }
+    public static func lightBlue()              -> Self { .init(Color(rgba: 0xADD8E6FF)!) }
+    public static func lightCoral()             -> Self { .init(Color(rgba: 0xF08080FF)!) }
+    public static func lightCyan()              -> Self { .init(Color(rgba: 0xE0FFFFFF)!) }
+    public static func lightGoldenRodYellow()   -> Self { .init(Color(rgba: 0xFAFAD2FF)!) }
+    public static func lightGray()              -> Self { .init(Color(rgba: 0xD3D3D3FF)!) }
+    public static func lightGreen()             -> Self { .init(Color(rgba: 0x90EE90FF)!) }
+    public static func lightGrey()              -> Self { .init(Color(rgba: 0xD3D3D3FF)!) }
+    public static func lightPink()              -> Self { .init(Color(rgba: 0xFFB6C1FF)!) }
+    public static func lightSalmon()            -> Self { .init(Color(rgba: 0xFFA07AFF)!) }
+    public static func lightSeaGreen()          -> Self { .init(Color(rgba: 0x20B2AAFF)!) }
+    public static func lightSkyBlue()           -> Self { .init(Color(rgba: 0x87CEFAFF)!) }
+    public static func lightSlateGray()         -> Self { .init(Color(rgba: 0x778899FF)!) }
+    public static func lightSlateGrey()         -> Self { .init(Color(rgba: 0x778899FF)!) }
+    public static func lightSteelBlue()         -> Self { .init(Color(rgba: 0xB0C4DEFF)!) }
+    public static func lightYellow()            -> Self { .init(Color(rgba: 0xFFFFE0FF)!) }
+    public static func lime()                   -> Self { .init(Color(rgba: 0x00FF00FF)!) }
+    public static func limeGreen()              -> Self { .init(Color(rgba: 0x32CD32FF)!) }
+    public static func linen()                  -> Self { .init(Color(rgba: 0xFAF0E6FF)!) }
+    public static func magenta()                -> Self { .init(Color(rgba: 0xFF00FFFF)!) }
+    public static func maroon()                 -> Self { .init(Color(rgba: 0x800000FF)!) }
+    public static func mediumAquaMarine()       -> Self { .init(Color(rgba: 0x66CDAAFF)!) }
+    public static func mediumBlue()             -> Self { .init(Color(rgba: 0x0000CDFF)!) }
+    public static func mediumOrchid()           -> Self { .init(Color(rgba: 0xBA55D3FF)!) }
+    public static func mediumPurple()           -> Self { .init(Color(rgba: 0x9370DBFF)!) }
+    public static func mediumSeaGreen()         -> Self { .init(Color(rgba: 0x3CB371FF)!) }
+    public static func mediumSlateBlue()        -> Self { .init(Color(rgba: 0x7B68EEFF)!) }
+    public static func mediumSpringGreen()      -> Self { .init(Color(rgba: 0x00FA9AFF)!) }
+    public static func mediumTurquoise()        -> Self { .init(Color(rgba: 0x48D1CCFF)!) }
+    public static func mediumVioletRed()        -> Self { .init(Color(rgba: 0xC71585FF)!) }
+    public static func midnightBlue()           -> Self { .init(Color(rgba: 0x191970FF)!) }
+    public static func mintCream()              -> Self { .init(Color(rgba: 0xF5FFFAFF)!) }
+    public static func mistyRose()              -> Self { .init(Color(rgba: 0xFFE4E1FF)!) }
+    public static func moccasin()               -> Self { .init(Color(rgba: 0xFFE4B5FF)!) }
+    public static func navajoWhite()            -> Self { .init(Color(rgba: 0xFFDEADFF)!) }
+    public static func navy()                   -> Self { .init(Color(rgba: 0x000080FF)!) }
+    public static func oldLace()                -> Self { .init(Color(rgba: 0xFDF5E6FF)!) }
+    public static func olive()                  -> Self { .init(Color(rgba: 0x808000FF)!) }
+    public static func oliveDrab()              -> Self { .init(Color(rgba: 0x6B8E23FF)!) }
+    public static func orange()                 -> Self { .init(Color(rgba: 0xFFA500FF)!) }
+    public static func orangeRed()              -> Self { .init(Color(rgba: 0xFF4500FF)!) }
+    public static func orchid()                 -> Self { .init(Color(rgba: 0xDA70D6FF)!) }
+    public static func paleGoldenRod()          -> Self { .init(Color(rgba: 0xEEE8AAFF)!) }
+    public static func paleGreen()              -> Self { .init(Color(rgba: 0x98FB98FF)!) }
+    public static func paleTurquoise()          -> Self { .init(Color(rgba: 0xAFEEEEFF)!) }
+    public static func paleVioletRed()          -> Self { .init(Color(rgba: 0xDB7093FF)!) }
+    public static func papayaWhip()             -> Self { .init(Color(rgba: 0xFFEFD5FF)!) }
+    public static func peachPuff()              -> Self { .init(Color(rgba: 0xFFDAB9FF)!) }
+    public static func peru()                   -> Self { .init(Color(rgba: 0xCD853FFF)!) }
+    public static func pink()                   -> Self { .init(Color(rgba: 0xFFC0CBFF)!) }
+    public static func plum()                   -> Self { .init(Color(rgba: 0xDDA0DDFF)!) }
+    public static func powderBlue()             -> Self { .init(Color(rgba: 0xB0E0E6FF)!) }
+    public static func purple()                 -> Self { .init(Color(rgba: 0x800080FF)!) }
+    public static func rebeccaPurple()          -> Self { .init(Color(rgba: 0x663399FF)!) }
+    public static func rosyBrown()              -> Self { .init(Color(rgba: 0xBC8F8FFF)!) }
+    public static func royalBlue()              -> Self { .init(Color(rgba: 0x4169E1FF)!) }
+    public static func saddleBrown()            -> Self { .init(Color(rgba: 0x8B4513FF)!) }
+    public static func salmon()                 -> Self { .init(Color(rgba: 0xFA8072FF)!) }
+    public static func sandyBrown()             -> Self { .init(Color(rgba: 0xF4A460FF)!) }
+    public static func seaGreen()               -> Self { .init(Color(rgba: 0x2E8B57FF)!) }
+    public static func seaShell()               -> Self { .init(Color(rgba: 0xFFF5EEFF)!) }
+    public static func sienna()                 -> Self { .init(Color(rgba: 0xA0522DFF)!) }
+    public static func silver()                 -> Self { .init(Color(rgba: 0xC0C0C0FF)!) }
+    public static func skyBlue()                -> Self { .init(Color(rgba: 0x87CEEBFF)!) }
+    public static func slateBlue()              -> Self { .init(Color(rgba: 0x6A5ACDFF)!) }
+    public static func slateGray()              -> Self { .init(Color(rgba: 0x708090FF)!) }
+    public static func slateGrey()              -> Self { .init(Color(rgba: 0x708090FF)!) }
+    public static func snow()                   -> Self { .init(Color(rgba: 0xFFFAFAFF)!) }
+    public static func springGreen()            -> Self { .init(Color(rgba: 0x00FF7FFF)!) }
+    public static func steelBlue()              -> Self { .init(Color(rgba: 0x4682B4FF)!) }
+    public static func tan()                    -> Self { .init(Color(rgba: 0xD2B48CFF)!) }
+    public static func teal()                   -> Self { .init(Color(rgba: 0x008080FF)!) }
+    public static func thistle()                -> Self { .init(Color(rgba: 0xD8BFD8FF)!) }
+    public static func tomato()                 -> Self { .init(Color(rgba: 0xFF6347FF)!) }
+    public static func turquoise()              -> Self { .init(Color(rgba: 0x40E0D0FF)!) }
+    public static func violet()                 -> Self { .init(Color(rgba: 0xEE82EEFF)!) }
+    public static func wheat()                  -> Self { .init(Color(rgba: 0xF5DEB3FF)!) }
+    public static func whiteSmoke()             -> Self { .init(Color(rgba: 0xF5F5F5FF)!) }
+    public static func yellowGreen()            -> Self { .init(Color(rgba: 0x9ACD32FF)!) }
+}

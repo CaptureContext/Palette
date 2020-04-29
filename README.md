@@ -22,9 +22,12 @@ import Palette
 ```
 
 ```swift
-let color1 = Color<RGB>.classicBlue // Pantone color of 2020
-let color2 = Color<RGB>.livingCoral // Pantone color of 2019
-print(color1 != color2) // true
+let color1 = Color<RGB>.pantone(.classicBlue()) // Pantone color of 2020
+let color2 = Color<RGB>.web(.skyBlue()) // WebColor SkyBlue
+let color3 = Color<RGB>.fuchsia // The same as magenta
+let color4 = Color<RGB>.iOS(.systemRed())
+let color5 = Color<RGB>.iOS(.systemRed(.light))
+let color6 = Color<RGB>.iOS(.systemRed(.dark))
 ```
 
 Compatibility with NSColor/UIColor:
@@ -35,11 +38,9 @@ func setTextColor(_ color: Color<RGB>, to label: UILabel) {
 }
 
 func getTextColor(from label: UILabel) -> Color<RGB> {
-    return label.textColor.generic
+    label.textColor.generic
 }
 ```
-
-See [RGBPalette](./Sources/Palette/RGBPalette.swift) for complete list of colors.
 
 ## Installation
 
@@ -48,7 +49,7 @@ Add the package to Your SwiftPM package dependencies:
 ```swift
 .package(
     url: "https://github.com/MakeupStudio/Palette.git", 
-    .upToNextMajor(from: "3.0.0")
+    .upToNextMajor(from: "4.0.0-beta.1.0")
 )
 ```
 
