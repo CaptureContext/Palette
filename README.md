@@ -1,4 +1,6 @@
-# Palette
+<p align="center">
+  <img src="Assets/Palette-Logo-Pink.png" width=100%/>
+</p>
 
 <p>    
   <a href="https://swift.org">
