@@ -1,6 +1,4 @@
-// swift-tools-version:5.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -13,15 +11,21 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/MakeupStudio/GenericColor.git",
-            .upToNextMajor(from: "3.1.0")
+            from: "4.0.0-alpha.1.0"
         ),
     ],
     targets: [
         .target(
             name: "Palette",
-            dependencies: ["GenericColor"]),
+            dependencies: [
+                .product(name: "GenericColor", package: "GenericColor")
+            ]
+        ),
         .testTarget(
             name: "PaletteTests",
-            dependencies: ["Palette"]),
+            dependencies: [
+                .target(name: "Palette")
+            ]
+        ),
     ]
 )
