@@ -11,6 +11,7 @@ extension Color where Space == RGB {
     public static func pantone(_ container: ColorContainer<PantoneColorNamespace, RGB>) -> Self { container.content }
 }
 
+// TODO: Add TPX values
 extension ColorContainer where Namespace == PantoneColorNamespace, Space == RGB {
     /// Pantone color of 2015 (TCX value)
     public static func marsala() -> Self { .init(Color(rgba: 0x964f4cff)!) }
