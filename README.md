@@ -51,7 +51,7 @@ Add the package to Your SwiftPM package dependencies:
 ```swift
 .package(
     url: "https://github.com/MakeupStudio/Palette.git", 
-    from: "4.0.0-beta.2.0"
+    from: "4.0.0-beta.3.0"
 )
 ```
 
