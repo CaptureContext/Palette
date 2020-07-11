@@ -1,4 +1,6 @@
-# Palette
+<p align="center">
+  <img src="Assets/Palette-Logo-Pink.png" width=100%/>
+</p>
 
 <p>    
   <a href="https://swift.org">
@@ -43,6 +45,8 @@ func getTextColor(from label: UILabel) -> Color<RGB> {
 ```
 
 ## Installation
+
+**_See [this](https://github.com/MakeupStudio/Palette/tree/develop/4.0.0) for the latest version_**.
 
 Add the package to Your SwiftPM package dependencies:
 
