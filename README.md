@@ -4,7 +4,7 @@
 
 <p>    
   <a href="https://swift.org">
-        <img src="https://img.shields.io/badge/Swift-5.1-red.svg?logo=swift" />
+        <img src="https://img.shields.io/badge/Swift-5.3-orange.svg?logo=swift" />
     </a>
     <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg?style=flat" alt="SwiftPM" />
@@ -40,20 +40,18 @@ func setTextColor(_ color: Color<RGB>, to label: UILabel) {
 }
 
 func getTextColor(from label: UILabel) -> Color<RGB> {
-    label.textColor.generic
+    label.textColor.genericRGB
 }
 ```
 
 ## Installation
-
-**_See [this](https://github.com/MakeupStudio/Palette/tree/develop/4.0.0) for the latest version_**.
 
 Add the package to Your SwiftPM package dependencies:
 
 ```swift
 .package(
     url: "https://github.com/MakeupStudio/Palette.git", 
-    .upToNextMajor(from: "4.0.0-beta.1.0")
+    from: "4.0.0-beta.2.0"
 )
 ```
 
