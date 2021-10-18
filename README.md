@@ -15,7 +15,7 @@
     </a>
 </p>
 
-Platform agnostic static factory of [colors](https://github.com/MakeupStudio/GenericColor).
+Platform agnostic static factory of [colors](https://github.com/capturecontext/GenericColor).
 
 ## Usage
 
@@ -35,13 +35,7 @@ let color6 = Color<RGB>.iOS(.systemRed(.dark))
 Compatibility with NSColor/UIColor:
 
 ```swift
-func setTextColor(_ color: Color<RGB>, to label: UILabel) {
-    label.textColor = .init(color)
-}
-
-func getTextColor(from label: UILabel) -> Color<RGB> {
-    label.textColor.genericRGB
-}
+NSColor(.iOS(.systemBlue()))
 ```
 
 ## Installation
@@ -50,8 +44,9 @@ Add the package to Your SwiftPM package dependencies:
 
 ```swift
 .package(
-    url: "https://github.com/MakeupStudio/Palette.git", 
-    from: "4.0.0-beta.3.0"
+  name: "Palette",
+  url: "https://github.com/capturecontext/Palette.git", 
+  from: "5.0.0"
 )
 ```
 
