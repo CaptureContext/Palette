@@ -1,0 +1,604 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.25.4 clang-2100.3.25.1)
+// swift-module-flags: -target arm64-apple-macos12.0 -enable-objc-interop -language-mode 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name Palette
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AppKit
+@_exported import GenericColor
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension GenericColor::Color where Space == GenericColor::RGB {
+  @_hasInitialValue public static let clear: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let black: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let blue: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let green: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let cyan: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let red: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let fuchsia: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let yellow: GenericColor::Color<GenericColor::RGB>
+  @_hasInitialValue public static let white: GenericColor::Color<GenericColor::RGB>
+}
+public struct ColorContainer<Namespace, Space> where Space : GenericColor::ColorSpace {
+  public init(content: @escaping () -> GenericColor::Color<Space>)
+  public init(_ content: GenericColor::Color<Space>)
+  private let _content: () -> GenericColor::Color<Space>
+  public var content: GenericColor::Color<Space> {
+    get
+  }
+}
+public protocol CustomColorNamespace {
+}
+public enum iOSSystemColorNamespace {
+}
+public enum UserInterfaceStyle {
+  case light
+  case dark
+  @_semantics("derived_enum_equals") @_implements(Swift::Equatable, ==(_:_:)) public static func __derived_enum_equals(_ a: Palette::UserInterfaceStyle, _ b: Palette::UserInterfaceStyle) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+public struct DynamicColorProvider<Space> where Space : GenericColor::ColorSpace {
+  public static func constant(_ color: GenericColor::Color<Space>) -> Palette::DynamicColorProvider<Space>
+  public init(_ color: @escaping (Palette::UserInterfaceStyle) -> GenericColor::Color<Space>)
+  public let _color: (Palette::UserInterfaceStyle) -> GenericColor::Color<Space>
+  public func color(for style: Palette::UserInterfaceStyle) -> GenericColor::Color<Space>
+}
+extension Palette::UserInterfaceStyle {
+  public static var `default`: Palette::UserInterfaceStyle {
+    get
+  }
+}
+extension Palette::UserInterfaceStyle {
+  public static func system(_ appearance: AppKit::NSAppearance) -> Palette::UserInterfaceStyle
+  public static var global: Palette::UserInterfaceStyle {
+    get
+  }
+  public static var app: Palette::UserInterfaceStyle {
+    get
+  }
+}
+@available(macOS 10.15, *)
+extension AppKit::NSColor {
+  public static func dynamic<Space>(_ provider: @escaping (Palette::UserInterfaceStyle) -> GenericColor::Color<Space>) -> AppKit::NSColor where Space : GenericColor::ColorSpace, Space.Container : GenericColor::RGBProvider
+  public static func dynamic<Space>(_ provider: Palette::DynamicColorProvider<Space>) -> AppKit::NSColor where Space : GenericColor::ColorSpace, Space.Container : GenericColor::RGBProvider
+}
+@available(macOS 10.15, *)
+extension SwiftUICore::Color {
+  public static func dynamic<Space>(_ provider: @escaping (Palette::UserInterfaceStyle) -> GenericColor::Color<Space>) -> SwiftUICore::Color where Space : GenericColor::ColorSpace, Space.Container : GenericColor::RGBProvider
+  public static func dynamic<Space>(_ provider: Palette::DynamicColorProvider<Space>) -> SwiftUICore::Color where Space : GenericColor::ColorSpace, Space.Container : GenericColor::RGBProvider
+}
+public enum PantoneColorNamespace {
+}
+extension GenericColor::Color where Space == GenericColor::RGB {
+  public static func pantone(_ container: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB>) -> GenericColor::Color<Space>
+}
+extension Palette::ColorContainer where Namespace == Palette::PantoneColorNamespace, Space == GenericColor::RGB {
+  public static var marsala: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var roseQuartz: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var serenity: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var greenery: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var ultraviolet: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var livingCoral: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var classicBlue: Palette::ColorContainer<Palette::PantoneColorNamespace, GenericColor::RGB> {
+    get
+  }
+}
+public enum WebColorNamespace {
+}
+extension GenericColor::Color where Space == GenericColor::RGB {
+  public static func web(_ container: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB>) -> GenericColor::Color<Space>
+}
+extension Palette::ColorContainer where Namespace == Palette::WebColorNamespace, Space == GenericColor::RGB {
+  public static var aliceBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var antiqueWhite: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var aqua: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var aquamarine: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var azure: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var beige: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var bisque: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var blanchedAlmond: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var blueViolet: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var brown: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var burlyWood: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var cadetBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var chartreuse: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var chocolate: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var coral: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var cornflowerBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var cornsilk: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var crimson: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var cyan: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkCyan: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkGoldenRod: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkKhaki: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkMagenta: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkOliveGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkOrange: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkOrchid: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkRed: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkSalmon: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkSeaGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkSlateBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkSlateGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkSlateGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkTurquoise: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var darkViolet: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var deepPink: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var deepSkyBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var dimGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var dimGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var dodgerBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var fireBrick: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var floralWhite: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var forestGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var gainsboro: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var ghostWhite: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var gold: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var goldenRod: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var gray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var greenYellow: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var grey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var honeyDew: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var hotPink: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var indianRed: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var indigo: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var ivory: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var khaki: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lavender: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lavenderBlush: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lawnGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lemonChiffon: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightCoral: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightCyan: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightGoldenRodYellow: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightPink: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSalmon: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSeaGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSkyBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSlateGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSlateGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightSteelBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lightYellow: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var lime: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var limeGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var linen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var magenta: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var maroon: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumAquaMarine: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumOrchid: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumPurple: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumSeaGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumSlateBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumSpringGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumTurquoise: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mediumVioletRed: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var midnightBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mintCream: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var mistyRose: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var moccasin: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var navajoWhite: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var navy: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var oldLace: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var olive: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var oliveDrab: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var orange: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var orangeRed: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var orchid: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var paleGoldenRod: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var paleGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var paleTurquoise: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var paleVioletRed: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var papayaWhip: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var peachPuff: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var peru: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var pink: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var plum: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var powderBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var purple: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var rebeccaPurple: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var rosyBrown: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var royalBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var saddleBrown: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var salmon: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var sandyBrown: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var seaGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var seaShell: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var sienna: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var silver: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var skyBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var slateBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var slateGray: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var slateGrey: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var snow: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var springGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var steelBlue: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var tan: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var teal: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var thistle: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var tomato: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var turquoise: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var violet: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var wheat: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var whiteSmoke: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+  public static var yellowGreen: Palette::ColorContainer<Palette::WebColorNamespace, GenericColor::RGB> {
+    get
+  }
+}
+extension Palette::DynamicColorProvider where Space == GenericColor::RGB {
+  public static var systemRed: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemOrange: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemYellow: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGreen: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemTeal: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemBlue: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemIndigo: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemPurple: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemPink: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey2: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey3: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey4: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey5: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemGrey6: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+  public static var systemDisabled: Palette::DynamicColorProvider<GenericColor::RGB> {
+    get
+  }
+}
+extension GenericColor::Color where Space == GenericColor::RGB {
+  public static func iOS(_ container: Palette::ColorContainer<Palette::iOSSystemColorNamespace, GenericColor::RGB>) -> GenericColor::Color<Space>
+}
+extension Palette::ColorContainer where Namespace == Palette::iOSSystemColorNamespace, Space == GenericColor::RGB {
+  public static func systemRed(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemOrange(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemYellow(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGreen(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemTeal(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemBlue(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemIndigo(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemPurple(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemPink(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey2(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey3(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey4(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey5(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemGrey6(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+  public static func systemDisabled(_ style: Palette::UserInterfaceStyle = .default) -> Palette::ColorContainer<Namespace, Space>
+}
+extension Palette::UserInterfaceStyle : Swift::Equatable {}
+extension Palette::UserInterfaceStyle : Swift::Hashable {}
