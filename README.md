@@ -24,7 +24,7 @@ import Palette
 ```
 
 ```swift
-let color1 = Color<RGB>.pantone(.classicBlue()) // Pantone color of 2020
+let color1 = Color<RGB>.pantone(.classicBlue) // Pantone color of 2020
 let color2 = Color<RGB>.web(.skyBlue()) // WebColor SkyBlue
 let color3 = Color<RGB>.fuchsia // The same as magenta
 let color4 = Color<RGB>.iOS(.systemRed())
@@ -32,11 +32,25 @@ let color5 = Color<RGB>.iOS(.systemRed(.light))
 let color6 = Color<RGB>.iOS(.systemRed(.dark))
 ```
 
-Compatibility with NSColor/UIColor:
+Compatibility with NSColor/UIColor/SwiftUI.Color:
 
 ```swift
-NSColor(.iOS(.systemBlue()))
+NSColor.dynamic(.systemBlue)
+UIColor.dynamic(.systemBlue)
+SwiftUI.Color.dynamic(.systemBlue)
+
+// Also supports custom colors
+<#Color#>.dynamic { style in 
+switch style {
+  case .dark:
+    return .pantone(.livingCoral)
+  case .light:
+    return .hex("#ffffff")
+  }
+}
 ```
+
+> Note, that you should use `<#Color#>.dynamic(...)` instead of `<#Color#>(Color<RGB>)` to enable trully dynamic colors
 
 ## Installation
 
